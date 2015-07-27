@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     general_path='/Users/pierregagliardi/DossierTravail/Programmation/PythonPath/projet_sentiment_analysis/'
     path_to_training_set=general_path+'training_set_60000/training_set_unigram_all_features/'
-    path_to_pickle=general_path+'pickle_unigrams_without_varThres/'
+    path_to_pickle=general_path+'pickle_unigrams/'
 
     unigrams=[1000,2000,3000,4000,5000,6000,7000,8000,9000]
     #The jobs are also parallelised on the cpu

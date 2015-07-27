@@ -39,7 +39,7 @@ def plot_heat_map(scores, gamma_range, C_range,path_to_Figures):
 
 if __name__=="__main__":
     path='/Users/pierregagliardi/DossierTravail/Programmation/PythonPath/projet_sentiment_analysis'
-    scores=np.load(path+'/pickle_hyper_parameters/60000_all_features_1000_rbf_without_varThres.pkl')
+    scores=np.load(path+'/pickle_hyper_parameters/60000_all_features_1000_rbf.pkl')
     C_range = np.logspace(0, 3, 4)
     gamma_range = np.logspace(-3, -1, 3)
     list=list(product(C_range,gamma_range))

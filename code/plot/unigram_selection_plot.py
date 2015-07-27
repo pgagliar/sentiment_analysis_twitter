@@ -6,7 +6,7 @@ from sklearn import metrics
 
 if __name__=="__main__":
     path='/Users/pierregagliardi/DossierTravail/Programmation/PythonPath/projet_sentiment_analysis/'
-    folder = path+'pickle_unigrams_without_varThres/'
+    folder = path+'pickle_unigrams/'
     unigrams=[100,1000,2000,3000,4000,5000,6000,7000,8000,9000]
     f1_score=[]
     accuracy=[]
@@ -27,4 +27,4 @@ if __name__=="__main__":
     legend = plt.legend(loc='upper center')
     plt.grid(True)
     fig = plt.gcf()
-    fig.savefig(path+'/unigrams_without_varThres.png')
+    fig.savefig(path+'/selection_optimal_number_unigrams.png')

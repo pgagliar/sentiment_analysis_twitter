@@ -12,7 +12,7 @@ from projet_sentiment_analysis.code.utilities import extract_data
 if __name__ == "__main__":
 
 
-    general_path='/Users/pierregagliardi/DossierTravail/Programmation/PythonPath/projet_sentiment_analysis/'
+    general_path='projet_sentiment_analysis/'
     path_to_training_set=general_path+'training_set_60000/training_set_unigram_all_features/'
     path_to_pickle=general_path+'pickle_hyper_parameters/'
 

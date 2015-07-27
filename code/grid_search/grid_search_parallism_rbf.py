@@ -13,7 +13,7 @@ from sklearn import metrics
 from sklearn.svm import SVC
 from sklearn.feature_selection import VarianceThreshold
 from projet_sentiment_analysis.code.utilities import extract_data
-
+# Train classifiers
 def fit_and_score((C,gamma),X_train, y_train,X_test):
      start_time = time.clock()
      clf=SVC(C=C, cache_size=2000, class_weight=None,
@@ -45,11 +45,9 @@ if __name__ == "__main__":
         path_to_training_set+'metrics_testing_set_1000.data')
 
 
-#check how many cpu are available to parallelise the task
+    #check how many cpu are available to parallelise the task
     print multiprocessing.cpu_count()
-    ##############################################################################
-    # Train classifiers
-    #
+
     # For an initial search, a logarithmic grid with basis
     # 10 is often helpful. Using a basis of 2, a finer
     # tuning can be achieved but at a much higher cost.
@@ -59,7 +57,7 @@ if __name__ == "__main__":
     param_grid = dict(gamma=gamma_range, C=C_range)
 
 
-#paralellise the research of hyper parameters
+    #paralellise the research of hyper parameters
     n_jobs=multiprocessing.cpu_count()-2
 
     params_scores = Parallel(
@@ -70,8 +68,8 @@ if __name__ == "__main__":
         )
 
 
-
-    with open(path_to_pickle+'60000_all_features_1000_rbf_without_varThres.pkl', 'wb') as fid :
+    #pickle the performance of the model
+    with open(path_to_pickle+'60000_all_features_1000_rbf.pkl', 'wb') as fid :
             cPickle.dump(params_scores, fid)
 
 

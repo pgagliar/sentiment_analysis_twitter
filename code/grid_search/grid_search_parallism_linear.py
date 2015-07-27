@@ -14,6 +14,7 @@ from sklearn.feature_selection import VarianceThreshold
 
 from projet_sentiment_analysis.code.utilities import extract_data
 
+# Train classifiers
 def fit_and_score(C,X_train, y_train,X_test):
      start_time = time.clock()
      clf=SVC(C=C, cache_size=2000, class_weight=None,
@@ -36,7 +37,6 @@ if __name__ == "__main__":
 
     ####### home computer path ######
     general_path='/Users/pierregagliardi/DossierTravail/Programmation/PythonPath/projet_sentiment_analysis/'
-    #path_to_training_set=general_path+'training_set_random/'
     path_to_training_set=general_path+'training_set_60000/training_set_unigram_all_features/'
     path_to_pickle=general_path+'pickle_hyper_parameters/'
 
@@ -44,10 +44,6 @@ if __name__ == "__main__":
         path_to_training_set+'metrics_training_set_1000.data',
         path_to_training_set+'metrics_testing_set_1000.data')
 
-
-    ##############################################################################
-    # Train classifiers
-    #
     # For an initial search, a logarithmic grid with basis
     # 10 is often helpful. Using a basis of 2, a finer
     # tuning can be achieved but at a much higher cost.
@@ -63,6 +59,6 @@ if __name__ == "__main__":
     )
 
 
-    with open(path_to_pickle+'60000_all_features_1000_linear_without_varThres.pkl', 'wb') as fid :
+    with open(path_to_pickle+'60000_all_features_1000_linear.pkl', 'wb') as fid :
             cPickle.dump(params_scores, fid)
 
